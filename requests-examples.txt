@@ -1,0 +1,35 @@
+#POST 
+curl -H 'Content-Type: application/json' -X POST -i http://localhost:8080/language --data '{
+"name" : "C++",
+"description" : "bbbbb",
+"rating" : 2
+}'
+
+curl -H 'Content-Type: application/json' -X POST -i http://localhost:8080/language --data '{
+"name" : "Java",
+"description" : "aaaaa",
+"rating" : 1
+}'
+
+# POST WITH WRONG NAME
+curl -H 'Content-Type: application/json' -X POST -i http://localhost:8080/language --data '{
+"name" : "Unsupported language name",
+"description" : "aaaaa",
+"rating" : 1
+}'
+
+# GET ALL
+curl http://localhost:8080/language
+
+# GET BY NAME
+curl http://localhost:8080/language/Java
+
+# PUT
+curl -H 'Content-Type: application/json' -X PUT -i http://localhost:8080/language/Java --data '{
+"name" : "Java",
+"description" : "aaaaaaaaa",
+"rating" : 1
+}'
+
+# DELETE
+curl -H 'Content-Type: application/json' -X DELETE -i http://localhost:8080/language/Java
